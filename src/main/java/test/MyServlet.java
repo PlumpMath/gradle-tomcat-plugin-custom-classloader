@@ -15,6 +15,6 @@ public class MyServlet extends HttpServlet {
         if (!Thread.currentThread().getContextClassLoader().getClass().getName().equals("test.CustomClassLoader")) {
             throw new IllegalStateException("Invalid ClassLoader used: " + Thread.currentThread().getContextClassLoader());
         }
-        super.service(req, resp);
+        resp.getWriter().write("Everything good!");
     }
 }
